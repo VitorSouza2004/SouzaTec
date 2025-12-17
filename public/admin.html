@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - SouzaTec</title>
+    
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+</head>
+<body>
+    <!-- PÁGINA DE LOGIN -->
+    <div class="login-container" id="loginPage">
+        <div class="login-form">
+            <h2><i class="fas fa-lock"></i> Acesso Administrativo</h2>
+            <p style="text-align: center; color: var(--secondary-slate); margin-bottom: 25px;">
+                Sistema de Gerenciamento SouzaTec
+            </p>
+            
+            <div class="form-group">
+                <label for="username"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="username" placeholder="seu@email.com" autocomplete="username">
+            </div>
+            
+            <div class="form-group">
+                <label for="password"><i class="fas fa-key"></i> Senha</label>
+                <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+            </div>
+            
+            <button type="button" class="btn btn-primary" id="loginButton" style="width: 100%;">
+                <i class="fas fa-sign-in-alt"></i> Entrar no Sistema
+            </button>
+            
+            <div id="loginError" class="alert alert-danger" style="display: none; margin-top: 15px;">
+                <i class="fas fa-exclamation-triangle"></i> <span id="errorMessage"></span>
+            </div>
+            
+            <p style="margin-top: 20px; text-align: center; color: var(--secondary-slate); font-size: 0.9rem;">
+                <i class="fas fa-shield-alt"></i> Sistema seguro • Acesso restrito
+            </p>
+        </div>
+    </div>
+
+    <!-- PAINEL ADMINISTRATIVO -->
+    <div class="admin-panel" id="adminPanel">
+        <!-- CABEÇALHO -->
+        <div class="admin-header">
+            <div class="header-content">
+                <div>
+                    <h2 style="margin: 0; color: white; font-size: 1.2rem;">
+                        <i class="fas fa-laptop-code"></i> Painel Administrativo - SouzaTec
+                    </h2>
+                    <div id="currentUserInfo"></div>
+                </div>
+                <button class="btn" id="logoutButton" style="background-color: var(--accent-amber); color: var(--dark-text);">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </div>
+        </div>
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="admin-nav">
+            <ul>
+                <li>
+                    <a href="#" class="active" onclick="showSection('clients')">
+                        <i class="fas fa-users"></i> Clientes
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSection('services')">
+                        <i class="fas fa-chart-bar"></i> Estatísticas
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSection('reports')">
+                        <i class="fas fa-file-alt"></i> Relatórios
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="showSection('users')">
+                        <i class="fas fa-user-cog"></i> Usuários
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main>
+            <!-- SEÇÃO: CLIENTES -->
+            <section id="clientsSection" class="admin-section">
+                <h3><i class="fas fa-users"></i> Gerenciamento de Clientes</h3>
+                <p style="color: var(--secondary-slate); margin-bottom: 20px;">
+                    Gerencie todos os clientes cadastrados através do site. Atribua técnicos, atualize status e entre em contato.
+                </p>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Contato</th>
+                                <th>Serviço</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientsTableBody">
+                            <tr>
+                                <td colspan="6" class="empty-message">
+                                    <i class="fas fa-spinner fa-spin"></i> Carregando clientes...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SEÇÃO: ESTATÍSTICAS -->
+            <section id="servicesSection" class="admin-section hidden">
+                <h3><i class="fas fa-chart-bar"></i> Estatísticas de Serviços</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Total de Serviços</h4>
+                        <p class="stat-number" id="totalServices">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Serviços Concluídos</h4>
+                        <p class="stat-number" id="completedServices">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Serviços Pendentes</h4>
+                        <p class="stat-number" id="pendingServices">0</p>
+                    </div>
+                </div>
+
+                <div class="services-list">
+                    <h4><i class="fas fa-star"></i> Serviços Mais Solicitados</h4>
+                    <ul id="popularServices">
+                        <li>Carregando estatísticas...</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SEÇÃO: RELATÓRIOS -->
+            <section id="reportsSection" class="admin-section hidden">
+                <h3><i class="fas fa-file-alt"></i> Relatórios</h3>
+                
+                <div class="reports-content">
+                    <div style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #e2e8f0;">
+                        <h4><i class="fas fa-filter"></i> Filtrar Relatórios</h4>
+                        <div class="filter-options">
+                            <select id="reportType">
+                                <option value="monthly">Relatório Mensal</option>
+                                <option value="quarterly">Relatório Trimestral</option>
+                                <option value="yearly">Relatório Anual</option>
+                            </select>
+                            <input type="month" id="reportMonth">
+                            <button class="btn btn-primary" onclick="generateReport()">
+                                <i class="fas fa-download"></i> Gerar Relatório
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4><i class="fas fa-chart-line"></i> Resultados</h4>
+                        <div class="report-data" id="reportData">
+                            <p style="color: var(--secondary-slate); text-align: center;">
+                                <i class="fas fa-info-circle"></i> Selecione um período e clique em "Gerar Relatório" para visualizar os dados.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO: USUÁRIOS -->
+            <section id="usersSection" class="admin-section hidden">
+                <h3><i class="fas fa-user-cog"></i> Gerenciamento de Usuários</h3>
+                <p style="color: var(--secondary-slate); margin-bottom: 20px;">
+                    Gerencie técnicos e administradores do sistema. Apenas administradores podem ver esta seção.
+                </p>
+                
+                <div class="users-content">
+                    <div style="grid-column: 1 / -1;">
+                        <button class="btn btn-success" onclick="showAddTechnicianModal()" id="addTechnicianBtn" style="display: none;">
+                            <i class="fas fa-user-plus"></i> Adicionar Técnico
+                        </button>
+                        
+                        <div class="table-container" style="margin-top: 20px;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Email</th>
+                                        <th>Telefone</th>
+                                        <th>Cargo</th>
+                                        <th>Status</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody">
+                                    <tr>
+                                        <td colspan="6" class="empty-message">
+                                            <i class="fas fa-spinner fa-spin"></i> Carregando usuários...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

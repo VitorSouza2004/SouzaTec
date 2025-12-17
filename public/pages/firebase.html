@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração Firebase - SouzaTec</title>
+    
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/firebase.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- LOGO -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Souza<span>Tec</span></h1>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8); margin: 0;">Soluções em TI</p>
+                    </div>
+                </div>
+
+                <!-- NAVEGAÇÃO -->
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="../index.html#services" class="nav-link">Serviços</a></li>
+                        <li><a href="../root.html" class="nav-link">Root</a></li>
+                        <li><a href="verificacao.html" class="nav-link">Verificação</a></li>
+                        <li><a href="firebase.html" class="nav-link active">Firebase</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="firebase-hero">
+        <div class="firebase-container">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; color: white;">
+                <i class="fas fa-database"></i> Configuração Firebase
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
+                Guia completo para configurar e gerenciar o Firebase no seu projeto SouzaTec
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="section">
+        <div class="firebase-container">
+            <!-- INTRODUÇÃO -->
+            <div class="card" style="margin-bottom: 40px;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 15px;">
+                    O que é o Firebase?
+                </h2>
+                <p style="color: var(--secondary-slate); line-height: 1.8; margin-bottom: 15px;">
+                    Firebase é uma plataforma de desenvolvimento de aplicativos do Google que fornece 
+                    infraestrutura backend como serviço. No SouzaTec, usamos para:
+                </p>
+                <ul style="color: var(--secondary-slate); line-height: 1.8; padding-left: 20px;">
+                    <li>Armazenar dados de clientes do formulário de contato</li>
+                    <li>Autenticação de usuários no painel administrativo</li>
+                    <li>Hospedagem do site (Firebase Hosting)</li>
+                    <li>Análise de uso do site (Google Analytics)</li>
+                </ul>
+            </div>
+
+            <!-- CONFIGURAÇÃO ATUAL -->
+            <div class="card" style="margin-bottom: 40px;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-cog"></i> Configuração Atual
+                </h2>
+                
+                <div class="config-grid">
+                    <div class="config-card">
+                        <div class="config-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Firestore</h3>
+                        <p style="color: var(--secondary-slate); font-size: 0.9rem; margin-bottom: 15px;">
+                            Banco de dados NoSQL em tempo real
+                        </p>
+                        <span class="service-badge badge-enabled">Ativo</span>
+                        <span class="service-badge">Coleção: clients</span>
+                        <span class="service-badge">Coleção: users</span>
+                    </div>
+                    
+                    <div class="config-card">
+                        <div class="config-icon">
+                            <i class="fas fa-user-lock"></i>
+                        </div>
+                        <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Authentication</h3>
+                        <p style="color: var(--secondary-slate); font-size: 0.9rem; margin-bottom: 15px;">
+                            Sistema de login e autenticação
+                        </p>
+                        <span class="service-badge badge-enabled">Email/Password</span>
+                        <span class="service-badge badge-disabled">Google</span>
+                        <span class="service-badge badge-disabled">Facebook</span>
+                    </div>
+                    
+                    <div class="config-card">
+                        <div class="config-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Hosting</h3>
+                        <p style="color: var(--secondary-slate); font-size: 0.9rem; margin-bottom: 15px;">
+                            Hospedagem do site estático
+                        </p>
+                        <span class="service-badge badge-enabled">Ativo</span>
+                        <span class="service-badge">souza-tch.web.app</span>
+                        <span class="service-badge">SSL Automático</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GUIA DE CONFIGURAÇÃO -->
+            <div class="card" style="margin-bottom: 40px;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-book"></i> Guia Passo a Passo
+                </h2>
+                
+                <div class="step-container">
+                    <!-- PASSO 1 -->
+                    <div class="step-card">
+                        <h3 style="color: var(--primary-dark); margin-bottom: 15px;">1. Criar Projeto no Firebase</h3>
+                        <ol style="color: var(--secondary-slate); line-height: 1.8; padding-left: 20px;">
+                            <li>Acesse <a href="https://console.firebase.google.com" target="_blank">Firebase Console</a></li>
+                            <li>Clique em "Criar projeto" ou "Adicionar projeto"</li>
+                            <li>Nomeie como "SouzaTec" ou "souza-tch"</li>
+                            <li>Ative o Google Analytics (opcional)</li>
+                            <li>Selecione sua conta do Google</li>
+                        </ol>
+                    </div>
+
+                    <!-- PASSO 2 -->
+                    <div class="step-card">
+                        <h3 style="color: var(--primary-dark); margin-bottom: 15px;">2. Adicionar Aplicativo Web</h3>
+                        <ol style="color: var(--secondary-slate); line-height: 1.8; padding-left: 20px;">
+                            <li>No painel do projeto, clique no ícone "Web" (</> )</li>
+                            <li>Registre o app com nome "SouzaTec Website"</li>
+                            <li>Marque "Também configurar o Firebase Hosting"</li>
+                            <li>Clique em "Registrar aplicativo"</li>
+                            <li>Anote a configuração do Firebase que aparecerá</li>
+                        </ol>
+                        
+                        <div class="security-note">
+                            <p style="color: var(--primary-blue); font-weight: 600; margin-bottom: 10px;">
+                                <i class="fas fa-shield-alt"></i> Configuração Segura
+                            </p>
+                            <p style="color: var(--secondary-slate); font-size: 0.9rem; margin: 0;">
+                                Use o arquivo <code>/__/firebase/init.json</code> para configuração automática no Firebase Hosting. 
+                                Isso evita expor suas chaves API no código-fonte.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- PASSO 3 -->
+                    <div class="step-card">
+                        <h3 style="color: var(--primary-dark); margin-bottom: 15px;">3. Configurar Firestore Database</h3>
+                        <ol style="color: var(--secondary-slate); line-height: 1.8; padding-left: 20px;">
+                            <li>No menu lateral, clique em "Firestore Database"</li>
+                            <li>Clique em "Criar banco de dados"</li>
+                            <li>Escolha "Iniciar em modo de produção"</li>
+                            <li>Selecione a localização mais próxima (southamerica-east1)</li>
+                            <li>Clique em "Concluído" e aguarde a criação</li>
+                        </ol>
+                        
+                        <p style="color: var(--secondary-slate); margin-top: 15px;">
+                            <strong>Coleções necessárias:</strong>
+                        </p>
+                        <div class="code-block">
+                            // Coleção: clients (armazena dados do formulário)<br>
+                            // Estrutura:<br>
+                            {<br>
+                            &nbsp;&nbsp;name: string,<br>
+                            &nbsp;&nbsp;phone: string,<br>
+                            &nbsp;&nbsp;email: string,<br>
+                            &nbsp;&nbsp;service: string,<br>
+                            &nbsp;&nbsp;message: string,<br>
+                            &nbsp;&nbsp;status: "pending" | "completed",<br>
+                            &nbsp;&nbsp;date: timestamp<br>
+                            }<br><br>
+                            // Coleção: users (usuários do painel admin)<br>
+                            // Estrutura:<br>
+                            {<br>
+                            &nbsp;&nbsp;name: string,<br>
+                            &nbsp;&nbsp;email: string,<br>
+                            &nbsp;&nbsp;role: "admin" | "tecnico",<br>
+                            &nbsp;&nbsp;active: boolean,<br>
+                            &nbsp;&nbsp;permissions: map<br>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- PASSO 4 -->
+                    <div class="step-card">
+                        <h3 style="color: var(--primary-dark); margin-bottom: 15px;">4. Configurar Authentication</h3>
+                        <ol style="color: var(--secondary-slate); line-height: 1.8; padding-left: 20px;">
+                            <li>No menu lateral, clique em "Authentication"</li>
+                            <li>Vá para a aba "Sign-in method"</li>
+                            <li>Clique em "Email/Senha" e ative-o</li>
+                            <li>Adicione pelo menos um usuário admin manualmente</li>
+                            <li>Configure as regras de segurança conforme necessário</li>
+                        </ol>
+                        
+                        <div class="code-block" style="margin-top: 15px;">
+                            // Para adicionar usuário admin manualmente<br>
+                            // Email: admin@souzatec.com<br>
+                            // Senha: [senha forte]<br>
+                            // Depois crie documento correspondente na coleção users
+                        </div>
+                    </div>
+
+                    <!-- PASSO 5 -->
+                    <div class="step-card">
+                        <h3 style="color: var(--primary-dark); margin-bottom: 15px;">5. Configurar Regras de Segurança</h3>
+                        
+                        <p style="color: var(--secondary-slate); margin-bottom: 15px;">
+                            Acesse Firestore Database → Regras e cole:
+                        </p>
+                        
+                        <div class="code-block">
+                            rules_version = '2';<br>
+                            service cloud.firestore {<br>
+                            &nbsp;&nbsp;match /databases/{database}/documents {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Permite criação pública (formulário)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;match /clients/{clientId} {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allow create: if true;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allow read, update: if request.auth != null;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// Apenas admin pode gerenciar usuários<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;match /users/{userId} {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allow read: if request.auth != null;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allow write: if request.auth != null &&<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;}<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TESTES E VERIFICAÇÃO -->
+            <div class="card" style="margin-bottom: 40px;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-vial"></i> Testes de Configuração
+                </h2>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <button class="test-button" onclick="testFirebaseConnection()">
+                        <i class="fas fa-plug"></i> Testar Conexão Firebase
+                    </button>
+                    
+                    <button class="test-button" onclick="testFirestoreConnection()">
+                        <i class="fas fa-database"></i> Testar Conexão Firestore
+                    </button>
+                    
+                    <button class="test-button" onclick="testAuthentication()">
+                        <i class="fas fa-user-check"></i> Testar Authentication
+                    </button>
+                </div>
+                
+                <div class="test-results" id="testResults">
+                    <h4 style="color: var(--primary-dark); margin-bottom: 10px;">Resultados dos Testes:</h4>
+                    <div id="testResultsContent"></div>
+                </div>
+            </div>
+
+            <!-- SOLUÇÃO DE PROBLEMAS -->
+            <div class="troubleshooting">
+                <h3 style="color: var(--accent-amber); margin-bottom: 20px;">
+                    <i class="fas fa-exclamation-triangle"></i> Solução de Problemas Comuns
+                </h3>
+                
+                <div class="accordion" style="background: white; border-radius: 8px; margin: 15px 0; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion(this)" style="padding: 15px 20px;">
+                        <span>Erro: "Missing or insufficient permissions"</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p style="color: var(--secondary-slate); padding: 15px 20px; margin: 0;">
+                            <strong>Solução:</strong> As regras do Firestore estão bloqueando. Verifique se as regras 
+                            permitem a operação desejada. Para desenvolvimento, use regras temporárias:
+                        </p>
+                        <div class="code-block" style="margin: 15px 20px;">
+                            allow read, write: if true;
+                        </div>
+                        <p style="color: var(--secondary-slate); padding: 0 20px 15px; margin: 0; font-size: 0.9rem;">
+                            <i class="fas fa-exclamation-circle"></i> NUNCA use essas regras em produção!
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="accordion" style="background: white; border-radius: 8px; margin: 15px 0; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion(this)" style="padding: 15px 20px;">
+                        <span>Erro: "auth/invalid-login-credentials"</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p style="color: var(--secondary-slate); padding: 15px 20px; margin: 0;">
+                            <strong>Solução:</strong> O usuário não existe no Firebase Authentication. Crie o usuário manualmente:
+                        </p>
+                        <ol style="color: var(--secondary-slate); padding: 0 20px 15px 40px; margin: 0;">
+                            <li>Acesse Authentication → Users</li>
+                            <li>Clique em "Adicionar usuário"</li>
+                            <li>Insira email e senha</li>
+                            <li>Crie documento correspondente na coleção users</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="accordion" style="background: white; border-radius: 8px; margin: 15px 0; overflow: hidden;">
+                    <div class="accordion-header" onclick="toggleAccordion(this)" style="padding: 15px 20px;">
+                        <span>Erro: "Firebase App named '[DEFAULT]' already exists"</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p style="color: var(--secondary-slate); padding: 15px 20px; margin: 0;">
+                            <strong>Solução:</strong> O Firebase já foi inicializado. Use esta verificação no código:
+                        </p>
+                        <div class="code-block" style="margin: 15px 20px;">
+                            if (!firebase.apps.length) {<br>
+                            &nbsp;&nbsp;firebase.initializeApp(firebaseConfig);<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LINKS ÚTEIS -->
+            <div class="card" style="margin: 40px 0; text-align: center;">
+                <h3 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-external-link-alt"></i> Links Úteis
+                </h3>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px;">
+                    <a href="https://console.firebase.google.com" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-tachometer-alt"></i> Firebase Console
+                    </a>
+                    
+                    <a href="https://firebase.google.com/docs" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-book"></i> Documentação
+                    </a>
+                    
+                    <a href="https://github.com/firebase/" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> Exemplos no GitHub
+                    </a>
+                </div>
+                
+                <p style="color: var(--secondary-slate); font-size: 0.9rem;">
+                    <i class="fas fa-info-circle"></i> Para suporte técnico personalizado, entre em contato com nossa equipe
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- SOBRE -->
+                <div class="footer-section">
+                    <h3>SouzaTec</h3>
+                    <p>Soluções em TI com qualidade e confiabilidade para Parelheiros e região.</p>
+                </div>
+                
+                <!-- LINKS RÁPIDOS -->
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Início</a></li>
+                            <li><a href="../root.html"><i class="fas fa-chevron-right"></i> Guia de Root</a></li>
+                            <li><a href="verificacao.html"><i class="fas fa-chevron-right"></i> Verificação</a></li>
+                            <li><a href="firebase.html"><i class="fas fa-chevron-right"></i> Firebase</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- CONTATO -->
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="tel:+5511939231112"><i class="fas fa-phone"></i> +55 (11) 93923-1112</a></li>
+                            <li><a href="mailto:souzah101124@gmail.com"><i class="fas fa-envelope"></i> souzah101124@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SouzaTec - Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: rgba(255,255,255,0.5);">
+                    Configuração Firebase para o projeto SouzaTec
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../js/firebase.js"></script>
+</body>
+</html>

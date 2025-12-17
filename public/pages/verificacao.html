@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação Técnica - SouzaTec</title>
+    
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/verificacao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- LOGO -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Souza<span>Tec</span></h1>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8); margin: 0;">Soluções em TI</p>
+                    </div>
+                </div>
+
+                <!-- NAVEGAÇÃO -->
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="../index.html#services" class="nav-link">Serviços</a></li>
+                        <li><a href="../root.html" class="nav-link">Root</a></li>
+                        <li><a href="verificacao.html" class="nav-link active">Verificação</a></li>
+                        <li><a href="../index.html#contact" class="nav-link">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="verification-hero">
+        <div class="verification-container">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; color: white;">
+                <i class="fas fa-search"></i> Verificação Técnica Online
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
+                Ferramentas gratuitas para diagnosticar problemas no seu computador antes de solicitar um serviço
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="section">
+        <div class="verification-container">
+            <!-- INTRODUÇÃO -->
+            <div class="card" style="margin-bottom: 40px;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 15px;">
+                    Como funciona a verificação online?
+                </h2>
+                <p style="color: var(--secondary-slate); line-height: 1.8;">
+                    Nossas ferramentas de verificação executam testes não-invasivos no seu navegador para identificar 
+                    problemas comuns em computadores. Os testes são seguros e não armazenam dados pessoais.
+                </p>
+            </div>
+
+            <!-- FERRAMENTAS DE TESTE -->
+            <h2 style="color: var(--primary-dark); margin-bottom: 30px; text-align: center;">
+                <i class="fas fa-tools"></i> Ferramentas de Diagnóstico
+            </h2>
+            
+            <div class="tool-grid">
+                <!-- TESTE DE CONEXÃO -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 style="color: var(--primary-dark); margin-bottom: 15px;">Teste de Conexão</h3>
+                    <p style="color: var(--secondary-slate); margin-bottom: 20px; flex-grow: 1;">
+                        Verifica a velocidade e estabilidade da sua conexão com a internet.
+                    </p>
+                    <button class="btn btn-primary" onclick="runConnectionTest()" style="width: 100%;">
+                        <i class="fas fa-play"></i> Executar Teste
+                    </button>
+                </div>
+
+                <!-- TESTE DE DESEMPENHO -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 style="color: var(--primary-dark); margin-bottom: 15px;">Teste de Desempenho</h3>
+                    <p style="color: var(--secondary-slate); margin-bottom: 20px; flex-grow: 1;">
+                        Mede a capacidade de processamento do seu computador.
+                    </p>
+                    <button class="btn btn-primary" onclick="runPerformanceTest()" style="width: 100%;">
+                        <i class="fas fa-play"></i> Executar Teste
+                    </button>
+                </div>
+
+                <!-- VERIFICAÇÃO DE SISTEMA -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 style="color: var(--primary-dark); margin-bottom: 15px;">Verificação de Sistema</h3>
+                    <p style="color: var(--secondary-slate); margin-bottom: 20px; flex-grow: 1;">
+                        Detecta problemas com drivers e componentes do sistema.
+                    </p>
+                    <button class="btn btn-primary" onclick="runSystemCheck()" style="width: 100%;">
+                        <i class="fas fa-play"></i> Executar Teste
+                    </button>
+                </div>
+            </div>
+
+            <!-- PAINEL DE TESTES -->
+            <div class="results-panel" id="testsPanel">
+                <h3 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-clipboard-list"></i> Testes em Execução
+                </h3>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div id="testsList">
+                    <!-- Testes serão adicionados aqui via JavaScript -->
+                </div>
+            </div>
+
+            <!-- FERRAMENTAS DE DIAGNÓSTICO RÁPIDO -->
+            <div class="card" style="margin: 40px 0;">
+                <h3 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-stethoscope"></i> Diagnóstico Rápido
+                </h3>
+                
+                <div class="diagnostic-tools">
+                    <div class="diagnostic-tool" onclick="quickTest('battery')">
+                        <i class="fas fa-battery-full" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 10px;"></i>
+                        <p style="font-weight: 500; color: var(--primary-dark); margin: 0;">Bateria</p>
+                    </div>
+                    
+                    <div class="diagnostic-tool" onclick="quickTest('memory')">
+                        <i class="fas fa-memory" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 10px;"></i>
+                        <p style="font-weight: 500; color: var(--primary-dark); margin: 0;">Memória RAM</p>
+                    </div>
+                    
+                    <div class="diagnostic-tool" onclick="quickTest('storage')">
+                        <i class="fas fa-hdd" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 10px;"></i>
+                        <p style="font-weight: 500; color: var(--primary-dark); margin: 0;">Armazenamento</p>
+                    </div>
+                    
+                    <div class="diagnostic-tool" onclick="quickTest('display')">
+                        <i class="fas fa-desktop" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 10px;"></i>
+                        <p style="font-weight: 500; color: var(--primary-dark); margin: 0;">Tela/Display</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INFORMAÇÕES DO SISTEMA -->
+            <div class="card" style="margin: 40px 0;">
+                <h3 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-info-circle"></i> Informações do Sistema
+                </h3>
+                
+                <div class="system-info" id="systemInfo">
+                    Coletando informações do sistema...
+                </div>
+                
+                <button class="btn btn-outline" onclick="collectSystemInfo()" style="width: 100%;">
+                    <i class="fas fa-redo"></i> Atualizar Informações
+                </button>
+            </div>
+
+            <!-- RECOMENDAÇÕES -->
+            <div class="card" style="margin: 40px 0; background: linear-gradient(135deg, var(--light-bg), white);">
+                <h3 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-lightbulb"></i> Recomendações Baseadas nos Resultados
+                </h3>
+                
+                <div id="recommendations">
+                    <p style="color: var(--secondary-slate); text-align: center; padding: 30px;">
+                        Execute os testes acima para receber recomendações personalizadas
+                    </p>
+                </div>
+            </div>
+
+            <!-- AGENDAMENTO -->
+            <div class="card" style="margin: 40px 0; text-align: center; border: 2px solid var(--primary-blue);">
+                <h3 style="color: var(--primary-dark); margin-bottom: 15px;">
+                    <i class="fas fa-calendar-check"></i> Precisa de Ajuda Especializada?
+                </h3>
+                <p style="color: var(--secondary-slate); max-width: 600px; margin: 0 auto 25px;">
+                    Se nossos testes identificaram problemas ou se você precisa de assistência técnica profissional, 
+                    nossa equipe está pronta para ajudar com diagnóstico presencial ou remoto.
+                </p>
+                <a href="../index.html#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px; margin: 0 10px;">
+                    <i class="fas fa-phone-alt"></i> Agendar Visita Técnica
+                </a>
+                <a href="https://wa.me/5511939231112" class="btn btn-success" style="font-size: 1.1rem; padding: 15px 40px; margin: 0 10px;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Rápido
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- SOBRE -->
+                <div class="footer-section">
+                    <h3>SouzaTec</h3>
+                    <p>Soluções em TI com qualidade e confiabilidade para Parelheiros e região.</p>
+                </div>
+                
+                <!-- LINKS RÁPIDOS -->
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Início</a></li>
+                            <li><a href="../root.html"><i class="fas fa-chevron-right"></i> Guia de Root</a></li>
+                            <li><a href="verificacao.html"><i class="fas fa-chevron-right"></i> Verificação</a></li>
+                            <li><a href="firebase.html"><i class="fas fa-chevron-right"></i> Firebase</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- CONTATO -->
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="tel:+5511939231112"><i class="fas fa-phone"></i> +55 (11) 93923-1112</a></li>
+                            <li><a href="mailto:souzah101124@gmail.com"><i class="fas fa-envelope"></i> souzah101124@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SouzaTec - Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: rgba(255,255,255,0.5);">
+                    Ferramentas de verificação para diagnóstico preliminar
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../js/verificacao.js"></script>
+</body>
+</html>

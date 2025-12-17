@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Root para Android - SouzaTec</title>
+    
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- LOGO -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Souza<span>Tec</span></h1>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.8); margin: 0;">Soluções em TI</p>
+                    </div>
+                </div>
+
+                <!-- NAVEGAÇÃO -->
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="index.html#services" class="nav-link">Serviços</a></li>
+                        <li><a href="root.html" class="nav-link active">Root</a></li>
+                        <li><a href="index.html#about" class="nav-link">Sobre</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contato</a></li>
+                        <li><a href="admin.html" class="nav-link"><i class="fas fa-lock"></i> Admin</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="root-hero">
+        <div class="guide-container">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; color: white;">
+                <i class="fas fa-mobile-alt"></i> Guia Completo de Root
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
+                Tutorial passo a passo para desbloquear todo o potencial do seu Android com segurança
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="section">
+        <div class="guide-container">
+            <!-- AVISO IMPORTANTE -->
+            <div class="warning-banner">
+                <h3 style="color: var(--accent-amber); margin-bottom: 10px;">
+                    <i class="fas fa-exclamation-triangle"></i> AVISO IMPORTANTE
+                </h3>
+                <p style="color: var(--secondary-slate); margin: 0;">
+                    O processo de root pode <strong>anular a garantia</strong> do seu dispositivo e, se feito incorretamente, 
+                    pode <strong>danificar permanentemente</strong> o aparelho. Este guia é apenas para fins educacionais. 
+                    Proceda por sua própria conta e risco.
+                </p>
+            </div>
+
+            <!-- INTRODUÇÃO -->
+            <div class="card" style="margin: 40px 0;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    O que é Root e por que fazer?
+                </h2>
+                <p style="color: var(--secondary-slate); line-height: 1.8; margin-bottom: 15px;">
+                    Root (ou "rootear") é o processo de obter acesso de superusuário (administrador) no sistema Android, 
+                    permitindo modificar profundamente o sistema operacional, remover aplicativos de fábrica, 
+                    instalar ROMs personalizadas e muito mais.
+                </p>
+                
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">✓</div>
+                        <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Vantagens</h3>
+                        <ul style="color: var(--secondary-slate); line-height: 1.6; padding-left: 20px;">
+                            <li>Remover bloatware (apps de fábrica)</li>
+                            <li>Instalar ROMs personalizadas</li>
+                            <li>Fazer backup completo do sistema</li>
+                            <li>Otimizar desempenho e bateria</li>
+                            <li>Usar apps que exigem root</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <div class="step-number">⚠</div>
+                        <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Riscos</h3>
+                        <ul style="color: var(--secondary-slate); line-height: 1.6; padding-left: 20px;">
+                            <li>Perda da garantia</li>
+                            <li>Possibilidade de brick (tijolo)</li>
+                            <li>Risco de segurança aumentado</li>
+                            <li>Alguns apps podem não funcionar</li>
+                            <li>Updates OTA podem parar de funcionar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRÉ-REQUISITOS -->
+            <div class="card" style="margin: 40px 0;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-clipboard-check"></i> Pré-requisitos
+                </h2>
+                
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <h3 style="color: var(--primary-dark); margin-bottom: 15px;">
+                            <i class="fas fa-mobile-alt"></i> No Seu Dispositivo
+                        </h3>
+                        <ul style="color: var(--secondary-slate); line-height: 1.6;">
+                            <li>Bateria carregada acima de 80%</li>
+                            <li>Backup completo dos dados</li>
+                            <li>Ativar modo desenvolvedor</li>
+                            <li>Ativar depuração USB</li>
+                            <li>Desbloquear OEM (se necessário)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step-card">
+                        <h3 style="color: var(--primary-dark); margin-bottom: 15px;">
+                            <i class="fas fa-laptop"></i> No Seu Computador
+                        </h3>
+                        <ul style="color: var(--secondary-slate); line-height: 1.6;">
+                            <li>Cabo USB original</li>
+                            <li>Drivers ADB instalados</li>
+                            <li>Conexão estável com internet</li>
+                            <li>Software específico para seu modelo</li>
+                            <li>Paciência e atenção aos detalhes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FERRAMENTAS RECOMENDADAS -->
+            <div class="card" style="margin: 40px 0;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-tools"></i> Ferramentas Recomendadas
+                </h2>
+                
+                <div class="download-grid">
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <h3>ADB e Fastboot</h3>
+                        <p style="color: var(--secondary-slate); font-size: 0.9rem; margin: 10px 0;">
+                            Ferramentas essenciais para comunicação com o dispositivo
+                        </p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 10px;">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Magisk</h3>
+                        <p style="color: var(--secondary-slate); font-size: 0.9rem; margin: 10px 0;">
+                            Sistema de root mais popular e atual
+                        </p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 10px;">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                    
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>TWRP Recovery</h3>
+                        <p style="color: var(--secondary-slate); font-size: 0.9rem; margin: 10px 0;">
+                            Recovery personalizado para instalações
+                        </p>
+                        <a href="#" class="btn btn-primary" style="margin-top: 10px;">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GUIA PASSO A PASSO -->
+            <div class="card" style="margin: 40px 0;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-footsteps"></i> Passo a Passo
+                </h2>
+                
+                <!-- PASSO 1 -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Passo 1: Preparação Inicial</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <ol style="color: var(--secondary-slate); line-height: 1.8; padding-left: 20px;">
+                            <li>Faça backup completo de seus dados</li>
+                            <li>Ative o Modo Desenvolvedor (Toque 7x em "Número da versão")</li>
+                            <li>Ative "Depuração USB" nas opções de desenvolvedor</li>
+                            <li>Ative "Desbloqueio OEM" (se disponível)</li>
+                            <li>Instale os drivers ADB no computador</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- PASSO 2 -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Passo 2: Desbloquear Bootloader</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="warning-banner" style="margin: 15px 0;">
+                            <p><strong>Atenção:</strong> Isso apagará todos os dados do dispositivo!</p>
+                        </div>
+                        <div class="code-block">
+                            adb devices<br>
+                            adb reboot bootloader<br>
+                            fastboot devices<br>
+                            fastboot flashing unlock
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PASSO 3 -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Passo 3: Instalar Recovery Personalizado</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p style="color: var(--secondary-slate); margin-bottom: 15px;">
+                            Baixe o TWRP específico para seu modelo e execute:
+                        </p>
+                        <div class="code-block">
+                            fastboot flash recovery twrp.img<br>
+                            fastboot reboot recovery
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PASSO 4 -->
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Passo 4: Instalar Magisk</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p style="color: var(--secondary-slate); margin-bottom: 15px;">
+                            Transfira o arquivo Magisk.zip para o dispositivo e no TWRP:
+                        </p>
+                        <div class="code-block">
+                            Instalar → Selecionar Magisk.zip<br>
+                            Deslizar para confirmar flash<br>
+                            Reiniciar sistema
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPATIBILIDADE -->
+            <div class="card" style="margin: 40px 0;">
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">
+                    <i class="fas fa-mobile-alt"></i> Compatibilidade por Marca
+                </h2>
+                
+                <table class="compatibility-table">
+                    <thead>
+                        <tr>
+                            <th>Marca</th>
+                            <th>Dificuldade</th>
+                            <th>Bootloader</th>
+                            <th>Observações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Samsung</td>
+                            <td><span class="tag tag-warning">Média</span></td>
+                            <td>Odin + Conta Samsung</td>
+                            <td>Knox é quebrado permanentemente</td>
+                        </tr>
+                        <tr>
+                            <td>Xiaomi</td>
+                            <td><span class="tag tag-success">Fácil</span></td>
+                            <td>Espera de 7 dias</td>
+                            <td>Melhor suporte da comunidade</td>
+                        </tr>
+                        <tr>
+                            <td>Motorola</td>
+                            <td><span class="tag tag-success">Fácil</span></td>
+                            <td>Fastboot direto</td>
+                            <td>Processo oficial disponível</td>
+                        </tr>
+                        <tr>
+                            <td>Google Pixel</td>
+                            <td><span class="tag tag-success">Muito Fácil</span></td>
+                            <td>Fastboot direto</td>
+                            <td>Melhor para aprendizado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ZONA DE PERIGO -->
+            <div class="danger-zone">
+                <h3 style="color: #dc2626; margin-bottom: 15px;">
+                    <i class="fas fa-skull-crossbones"></i> Problemas Comuns e Soluções
+                </h3>
+                
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Dispositivo não liga (Brick)</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p style="color: var(--secondary-slate);">
+                            <strong>Solução:</strong> Tentar entrar no modo download/fastboot. Se conseguir, 
+                            flash da stock ROM original. Caso contrário, pode ser necessário serviço técnico.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Bootloop (reinicia sem parar)</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p style="color: var(--secondary-slate);">
+                            <strong>Solução:</strong> Entrar no recovery (TWRP) e limpar cache/dalvik. 
+                            Se persistir, reinstalar a ROM.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SERVIÇO PROFISSIONAL -->
+            <div class="card" style="margin: 40px 0; text-align: center; background: linear-gradient(135deg, var(--light-bg), white);">
+                <h2 style="color: var(--primary-dark); margin-bottom: 15px;">
+                    <i class="fas fa-user-tie"></i> Precisa de Ajuda Profissional?
+                </h2>
+                <p style="color: var(--secondary-slate); max-width: 600px; margin: 0 auto 25px;">
+                    Oferecemos serviço de root remoto com garantia. Nossa equipe faz todo o processo 
+                    para você de forma segura e com suporte técnico.
+                </p>
+                <a href="index.html#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">
+                    <i class="fas fa-phone-alt"></i> Solicitar Serviço de Root
+                </a>
+                <p style="color: var(--secondary-slate); font-size: 0.9rem; margin-top: 15px;">
+                    <i class="fas fa-shield-alt"></i> Garantia de 30 dias no serviço
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- SOBRE -->
+                <div class="footer-section">
+                    <h3>SouzaTec</h3>
+                    <p>Soluções em TI com qualidade e confiabilidade para Parelheiros e região.</p>
+                </div>
+                
+                <!-- LINKS RÁPIDOS -->
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Início</a></li>
+                            <li><a href="index.html#services"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                            <li><a href="root.html"><i class="fas fa-chevron-right"></i> Root</a></li>
+                            <li><a href="pages/verificacao.html"><i class="fas fa-chevron-right"></i> Verificação</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- CONTATO -->
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="tel:+5511939231112"><i class="fas fa-phone"></i> +55 (11) 93923-1112</a></li>
+                            <li><a href="mailto:souzah101124@gmail.com"><i class="fas fa-envelope"></i> souzah101124@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 SouzaTec - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Função para accordion
+        function toggleAccordion(element) {
+            const accordion = element.parentElement;
+            const content = accordion.querySelector('.accordion-content');
+            const icon = element.querySelector('i');
+            
+            accordion.classList.toggle('active');
+            content.classList.toggle('active');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+        
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Inicializar primeiro accordion aberto
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstAccordion = document.querySelector('.accordion-header');
+            if(firstAccordion) {
+                toggleAccordion(firstAccordion);
+            }
+        });
+    </script>
+</body>
+</html>

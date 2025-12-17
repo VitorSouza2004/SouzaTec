@@ -1,0 +1,34 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/style.css",
+        "destination": "/css/style.css",
+        "type": 301
+      },
+      {
+        "source": "/admin.css",
+        "destination": "/css/admin.css",
+        "type": 301
+      },
+      {
+        "source": "/script.js",
+        "destination": "/js/script.js", 
+        "type": 301
+      },
+      {
+        "source": "/admin.js",
+        "destination": "/js/admin.js",
+        "type": 301
+      }
+    ]
+  }
+}

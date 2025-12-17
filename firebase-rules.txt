@@ -1,0 +1,60 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ========== REGRA PARA CLIENTES ==========
+    match /clients/{clientId} {
+      // PERMITE: Qualquer pessoa pode criar (formulário do site)
+      allow create: if true;
+      
+      // PERMITE: Usuários autenticados podem ler
+      allow read: if request.auth != null;
+      
+      // PERMITE: Atualizar apenas técnicos e admin
+      allow update: if 
+        request.auth != null &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['tecnico', 'admin'];
+      
+      // PERMITE: Deletar apenas admin
+      allow delete: if 
+        request.auth != null &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // ========== REGRA PARA USUÁRIOS ==========
+    match /users/{userId} {
+      // PERMITE: Admin pode criar novos usuários
+      allow create: if 
+        request.auth != null &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      
+      // PERMITE: Cada usuário pode ler seu próprio perfil
+      allow read: if request.auth != null && request.auth.uid == userId;
+      
+      // PERMITE: Admin pode ler todos os usuários
+      allow read: if 
+        request.auth != null &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      
+      // PERMITE: Atualizar apenas admin
+      allow update: if 
+        request.auth != null &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      
+      // PERMITE: Deletar apenas admin
+      allow delete: if 
+        request.auth != null &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // ========== BLOQUEIA TUDO O RESTO ==========
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
