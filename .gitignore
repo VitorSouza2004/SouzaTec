@@ -80,3 +80,5 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+login.txt
+
